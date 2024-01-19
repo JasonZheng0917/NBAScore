@@ -25,71 +25,56 @@ asyncData();
     <h1 class="title2">To Day: {{ date }}</h1>
   </div>
 
-  <!-- 客隊 -->
   <div class="content">
-    <div class="">
-      <div class="awayTeam" v-for="(away, index) in toDayGames" :key="index">
+    <div class="block" v-for="(data, index) in toDayGames" :key="index">
+      <!-- 客隊 -->
+      <div class="awayTeam">
         <img
           :src="
             'https://cdn.nba.com/logos/nba/' +
-            `${away.awayTeam.teamId}` +
+            `${data.awayTeam.teamId}` +
             '/global/L/logo.svg'
           "
         />
-        <p>{{ away.awayTeam.teamName }}</p>
-        <p>{{ away.awayTeam.wins }}-{{ away.awayTeam.losses }}</p>
+        <p class="awayName">{{ data.awayTeam.teamName }}</p>
+        <p>{{ data.awayTeam.wins }}-{{ data.awayTeam.losses }}</p>
       </div>
-    </div>
 
-    <!-- 客隊分數 -->
-    <div class="">
-      <div class="awayScore" v-for="(away, index) in toDayGames" :key="index">
-        {{ away.awayTeam.score }}
+      <!-- 客隊分數 -->
+      <div class="awayScore">
+        {{ data.awayTeam.score }}
       </div>
-    </div>
 
-    <!-- 狀態 -->
-    <div class="">
-      <div
-        class="text-center"
-        v-for="(status, index) in toDayGames"
-        :key="index"
-      >
-        <div
-          v-if="status.gameStatus === 3"
-          class="bg-slate-400 text-black font-bold w-full"
-        >
-          {{ status.gameStatusText }}
+      <!-- 狀態 -->
+      <div class="textCenter">
+        <div v-if="data.gameStatus === 3">
+          {{ data.gameStatusText }}
         </div>
-        <div v-if="status.gameStatus === 2" class="font-bold w-full">
-          <p class="bg-red-500 text-white">Live</p>
-          {{ status.gameStatusText }}
+        <div v-if="data.gameStatus === 2">
+          <p class="live">Live</p>
+          {{ data.gameStatusText }}
         </div>
-        <div v-if="status.gameStatus === 1" class="text-black font-bold w-full">
-          {{ status.gameStatusText }}
+        <div v-if="data.gameStatus === 1">
+          {{ data.gameStatusText }}
         </div>
       </div>
-    </div>
 
-    <!-- 主隊分數 -->
-    <div class="">
-      <div class="homeScore" v-for="(home, index) in toDayGames" :key="index">
-        {{ home.homeTeam.score }}
+      <!-- 主隊分數 -->
+      <div class="homeScore">
+        {{ data.homeTeam.score }}
       </div>
-    </div>
 
-    <!-- 主隊 -->
-    <div class="">
-      <div class="homeTeam" v-for="(home, index) in toDayGames" :key="index">
+      <!-- 主隊 -->
+      <div class="homeTeam">
         <img
           :src="
             'https://cdn.nba.com/logos/nba/' +
-            `${home.homeTeam.teamId}` +
+            `${data.homeTeam.teamId}` +
             '/global/L/logo.svg'
           "
         />
-        <p>{{ home.homeTeam.teamName }}</p>
-        <p>{{ home.homeTeam.wins }}-{{ home.homeTeam.losses }}</p>
+        <p class="homeName">{{ data.homeTeam.teamName }}</p>
+        <p>{{ data.homeTeam.wins }}-{{ data.homeTeam.losses }}</p>
       </div>
     </div>
   </div>
@@ -122,59 +107,86 @@ img {
   font-weight: bold;
 }
 .content {
+  margin-top: 60px;
+}
+.block {
   display: flex;
   justify-content: space-around;
-  margin-top: 60px;
-  width: 100vw;
-  height: 100vh;
+  margin-bottom: 50px;
+  height: 150px;
+  font-size: 30px;
+  border-bottom: 4px dotted #0a6373;
 }
 .awayTeam {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  font-size: 30px;
-  border-top: 4px;
   margin-bottom: 50px;
+}
+.awayTeam > .awayName {
+  margin-bottom: 10px;
 }
 .awayScore {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  font-size: 30px;
-  border-top: 4px;
   margin-bottom: 50px;
 }
-.text-center {
+.textCenter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  font-size: 30px;
+  font-weight: bold;
   margin-bottom: 50px;
+}
+.live {
+  background-color: red;
+  color: white;
 }
 .homeTeam {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  font-size: 30px;
-  border-top: 4px;
   margin-bottom: 50px;
+}
+.homeTeam > .homeName {
+  margin-bottom: 10px;
 }
 .homeScore {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  font-size: 30px;
-  border-top: 4px;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    font-size: 48px;
+    margin-right: 40px;
+  }
+  .title2 {
+    font-size: 30px;
+  }
+  .block {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    font-size: 30px;
+    margin-right: 20px;
+  }
+  .title2 {
+    font-size: 15px;
+  }
+  .block {
+    font-size: 15px;
+  }
 }
 </style>
