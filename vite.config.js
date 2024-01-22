@@ -6,7 +6,11 @@ import { fileURLToPath, URL } from "url";
 export default defineConfig({
   server: {
     proxy: {
-      '/todaysScoreboard_00.json': 'https://cdn.nba.com/static/json/liveData/scoreboard/',
+      '/api': {
+        target: 'https://cdn.nba.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
     },
   },
   plugins: [vue()],
