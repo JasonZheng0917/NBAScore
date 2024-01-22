@@ -9,6 +9,7 @@ export default defineConfig({
       '/api': {
         target: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json',
         changeOrigin: true,
+        secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
