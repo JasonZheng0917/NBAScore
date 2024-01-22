@@ -8,7 +8,11 @@ const asyncData = async () => {
   const apiURL =
     "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json";
   try {
-    const res = await axios.get("/api");
+    const res = await axios.get(
+      import.meta.env.DEV
+        ? "/api"
+        : "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
+    );
     toDayGames.value = res.data.scoreboard.games;
     console.log(toDayGames.value);
     date.value = res.data.scoreboard.gameDate;
