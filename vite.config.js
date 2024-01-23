@@ -13,6 +13,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
+    base: "/NBAScore",
   },
   plugins: [vue()],
   base: "/NBAScore",
