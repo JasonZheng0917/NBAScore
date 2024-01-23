@@ -9,13 +9,14 @@ export default defineConfig({
       '/api': {
         target: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json',
         changeOrigin: true,
+        ws: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
   plugins: [vue()],
-  base: "./",
+  base: "/NBAScore",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
