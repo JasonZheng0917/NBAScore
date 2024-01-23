@@ -4,16 +4,12 @@ import { fileURLToPath, URL } from "url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/NBAScore",
+  base: "/NBAScore/",
   server: {
     proxy: {
       '/api': {
-        target: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json',
+        target: 'https://cdn.nba.com/static/json/liveData/scoreboard',
         changeOrigin: true,
-        secure: false,
-        headers: {                  
-          Referer: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json'
-        },
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
