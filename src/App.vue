@@ -10,7 +10,7 @@ const asyncData = async () => {
   try {
     console.log(import.meta.env.VITE_BACKEND_HOST);
     const res = await axios.get(
-      "/NBAScore/https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
+      "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
     );
     toDayGames.value = res.data.scoreboard.games;
     date.value = res.data.scoreboard.gameDate;
