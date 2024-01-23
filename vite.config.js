@@ -13,10 +13,9 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
-    base: "/NBAScore",
   },
   plugins: [vue()],
-  base: "/NBAScore",
+  base: "./",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
