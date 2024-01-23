@@ -10,7 +10,6 @@ export default defineConfig({
       '/todaysScoreboard_00.json': {
         target: 'https://cdn.nba.com/static/json/liveData/scoreboard',
         changeOrigin: true,
-        ws: true,
         secure: false,
         headers: {                  
           Referer: 'https://cdn.nba.com/static/json/liveData/scoreboard'
