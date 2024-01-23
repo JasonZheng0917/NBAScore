@@ -12,6 +12,9 @@ export default defineConfig({
         changeOrigin: true,
         ws: true,
         secure: false,
+        headers: {                  
+          Referer: 'https://cdn.nba.com/static/json/liveData/scoreboard'
+        }
         // rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
