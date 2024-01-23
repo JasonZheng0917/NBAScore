@@ -6,8 +6,8 @@ import { fileURLToPath, URL } from "url";
 export default defineConfig({
   server: {
     proxy: {
-      '/api': {
-        target: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json',
+      '/todaysScoreboard_00.json': {
+        target: 'https://cdn.nba.com/static/json/liveData/scoreboard',
         changeOrigin: true,
         ws: true,
         secure: false,
