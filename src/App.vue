@@ -11,7 +11,6 @@ const asyncData = async () => {
     console.log(import.meta.env.VITE_BACKEND_HOST);
     const res = await axios.get(`${import.meta.env.VITE_BACKEND_HOST}`);
     toDayGames.value = res.data.scoreboard.games;
-    console.log(toDayGames.value);
     date.value = res.data.scoreboard.gameDate;
   } catch (err) {
     console.log(err);
