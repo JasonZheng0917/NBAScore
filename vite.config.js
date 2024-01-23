@@ -7,14 +7,14 @@ export default defineConfig({
   base: "/NBAScore",
   server: {
     proxy: {
-      '/todaysScoreboard_00.json': {
-        target: 'https://cdn.nba.com/static/json/liveData/scoreboard',
+      '/api': {
+        target: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json',
         changeOrigin: true,
         secure: false,
         headers: {                  
-          Referer: 'https://cdn.nba.com/static/json/liveData/scoreboard'
-        }
-        // rewrite: (path) => path.replace(/^\/api/, ''),
+          Referer: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json'
+        },
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
