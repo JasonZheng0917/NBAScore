@@ -12,11 +12,13 @@ export default defineConfig({
         ws: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, ''),
+        base: "/NBAScore",
       },
+      base: "/NBAScore",
     },
   },
   plugins: [vue()],
-  base: "/NBAScore/",
+  base: "/NBAScore",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
