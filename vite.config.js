@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from "url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/NBAScore",
   server: {
     proxy: {
       '/todaysScoreboard_00.json': {
@@ -16,7 +17,6 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
-  base: "/NBAScore",
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
