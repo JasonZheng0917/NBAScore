@@ -3,15 +3,16 @@ import { ref } from "vue";
 import axios from "axios";
 const toDayGames = ref([]);
 const date = ref("");
+
 const asyncData = async () => {
   const corsURL = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
   const apiURL =
     "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json";
   try {
-    console.log(import.meta.env.VITE_BACKEND_HOST);
     const res = await axios.get(
-      "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json"
+      "/NBAScore/api/static/json/liveData/scoreboard/todaysScoreboard_00.json"
     );
+
     toDayGames.value = res.data.scoreboard.games;
     date.value = res.data.scoreboard.gameDate;
   } catch (err) {
