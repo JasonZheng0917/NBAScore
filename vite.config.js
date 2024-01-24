@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json',
+        target: '/static/json/liveData/scoreboard/todaysScoreboard_00.json',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/NBAScore\/api/, ''),
       },
