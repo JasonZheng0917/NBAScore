@@ -9,9 +9,10 @@ const asyncData = async () => {
   const apiURL =
     "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json";
   const BASE_URL = import.meta.env.BASE_URL;
+  console.log(BASE_URL);
   try {
     const res = await axios({
-      url: `${BASE_URL}api`,
+      url: "/api",
       method: "get",
     });
 
