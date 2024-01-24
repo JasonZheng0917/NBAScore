@@ -12,7 +12,7 @@ const asyncData = async () => {
   console.log(BASE_URL);
   try {
     const res = await axios({
-      url: "/api",
+      url: "/todaysScoreboard_00.json",
       method: "get",
     });
 
