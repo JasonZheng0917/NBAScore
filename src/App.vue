@@ -8,8 +8,6 @@ const asyncData = async () => {
   const corsURL = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
   const apiURL =
     "https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json";
-  const BASE_URL = import.meta.env.BASE_URL;
-  console.log(BASE_URL);
   try {
     const res = await axios({
       url: "/NBAScore/api",
