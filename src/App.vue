@@ -11,7 +11,7 @@ const asyncData = async () => {
   const BASE_URL = import.meta.env.BASE_URL;
   try {
     const res = await axios({
-      url: `${BASE_URL}/api`,
+      url: `${BASE_URL}api`,
       method: "get",
     });
 
