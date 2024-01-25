@@ -16,7 +16,7 @@ const asyncData = async () => {
       headers: {
         Accept: "*/*, application/json, text/plain",
       },
-    });
+    }).then((res) => console.log(res));
 
     toDayGames.value = res.data.scoreboard.games;
     date.value = res.data.scoreboard.gameDate;
