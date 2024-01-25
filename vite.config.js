@@ -12,7 +12,7 @@ export default defineConfig({
         target: 'https://cdn.nba.com/',
         changeOrigin: true,
         ws: true,
-        rewrite: (path) => path.replace(/^\/static/, '')
+        rewrite: (path) => path.replace(/^\/static/, '/static')
       },
     },
   },

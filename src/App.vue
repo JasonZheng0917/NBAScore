@@ -11,7 +11,7 @@ const asyncData = async () => {
   try {
     const res = await axios({
       method: "get",
-      url: "static/json/liveData/scoreboard/todaysScoreboard_00.json",
+      url: "/static/json/liveData/scoreboard/todaysScoreboard_00.json",
       headers: {
         Accept: "*/*, application/json, text/plain",
       },
