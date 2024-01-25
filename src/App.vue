@@ -13,7 +13,9 @@ const asyncData = async () => {
     const res = await axios({
       method: "get",
       url: "/api",
-      headers: {},
+      headers: {
+        Accept: "*/*, application/json, text/plain",
+      },
     });
 
     toDayGames.value = res.data.scoreboard.games;
