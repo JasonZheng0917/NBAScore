@@ -8,11 +8,12 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/static': {
-        target: 'https://cdn.nba.com/',
+      '/api': {
+        port: '3000',
+        host: '0.0.0.0',
+        target: 'https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json',
         changeOrigin: true,
-        ws: true,
-        rewrite: (path) => path.replace(/^\/static/, '/static')
+        rewrite: (path) => path.replace(/^\/api/, '')
       },
     },
   },
