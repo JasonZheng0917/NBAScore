@@ -6,7 +6,6 @@ import { fileURLToPath, URL } from "url";
 export default defineConfig({
   base: "/NBAScore/",
   server: {
-    port: 3000,
     proxy: {
       '/api': {
         port: '3000',
