@@ -11,8 +11,11 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
+
+## Issue
+- 目前Build至Github Pages axios會404，但在本地端run dev沒問題。
